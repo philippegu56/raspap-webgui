@@ -88,6 +88,7 @@ function DisplayHostAPDConfig()
             $arrConfig[$arrLine[0]]=$arrLine[1];
         }
     };
+
     // assign beacon_int boolean if value is set
     if (isset($arrConfig['beacon_int'])) {
         $arrConfig['beacon_interval_bool'] = 1;
@@ -508,14 +509,27 @@ function updateHostapdConfig($ignore_broadcast_ssid,$wifiAPEnable,$bridgedEnable
     if (isset($_POST['max_num_sta'])) {
         $config.= 'max_num_sta='.$_POST['max_num_sta'].PHP_EOL;
     }
-    
+/*    
     if (isset($_POST['macaddr_acl'])) {
        $config.= 'macaddr_acl='.$_POST['macaddr_acl'].PHP_EOL;
     }
     if (isset($_POST['accept_mac_file'])) {
        $config.= 'accept_mac_file='.$_POST['accept_mac_file'].PHP_EOL;
     }
-
+*/
+    exec('cat '. RASPI_HOSTAPD_CONFIG . '.users', $hostapdconfigusers);
+    
+    foreach ($hostapdconfigusers as $hostapdconfigusersline) {
+        if (strlen($hostapdconfigusersline) === 0) {
+            continue;
+        }
+        
+        if ($hostapdconfigusersline[0] != "#") {
+            $arrLine = explode("=", $hostapdconfigusersline);
+            $config.= "$arrLine[0]=$arrLine[1];
+        }
+    };
+    
     file_put_contents("/tmp/hostapddata", $config);
     system("sudo cp /tmp/hostapddata " . RASPI_HOSTAPD_CONFIG, $result);
     return $result;
