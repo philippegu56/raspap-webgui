@@ -68,21 +68,7 @@
         <input type="text" id="max_num_sta" class="form-control" name="max_num_sta" placeholder="2007" value="<?php echo $arrConfig["max_num_sta"] ?>" aria-describedby="max_num_sta_help">
         <small id="max_num_sta_help" class="text-muted"><?php echo _("Configures the <code>max_num_sta</code> option of hostapd. The default and maximum is 2007. If empty or 0, the default applies.") ?></small>
       </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-md-6">
-        <label for="macaddr_acl"><?php echo _("Macaddr acl") ?></label>
-        <input type="text" id="users_parameters" class="form-control" name="macaddr_acl" placeholder="" value="<?php echo $arrConfig["macaddr_acl"] ?>" aria-describedby="macaddr_acl_help">
-        <small id="macaddr_acl_help" class="text-muted"><?php echo _("Configures macaddr acl") ?></small>
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-md-6">
-        <label for="accept_mac_file"><?php echo _("Accept mac file") ?></label>
-        <input type="text" id="accept_mac_file" class="form-control" name="accept_mac_file" placeholder="" value="<?php echo $arrConfig["accept_mac_file"] ?>" aria-describedby="accept_mac_file_help">
-        <small id="accept_mac_file_help" class="text-muted"><?php echo _("Configures accept mac file") ?></small>
-      </div>
-    </div>
+    </div>    
     <div class="row">
       <div class="form-group col-md-6">
       <label for="cbxcountries"><?php echo _("Country Code"); ?></label>
