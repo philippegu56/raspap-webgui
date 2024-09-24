@@ -508,6 +508,14 @@ function updateHostapdConfig($ignore_broadcast_ssid,$wifiAPEnable,$bridgedEnable
     if (isset($_POST['max_num_sta'])) {
         $config.= 'max_num_sta='.$_POST['max_num_sta'].PHP_EOL;
     }
+    
+    if (isset($_POST['macaddr_acl'])) {
+       $config.= 'macaddr_acl='.$_POST['macaddr_acl'].PHP_EOL;
+    }
+    if (isset($_POST['accept_mac_file'])) {
+       $config.= 'accept_mac_file='.$_POST['accept_mac_file'].PHP_EOL;
+    }
+
     file_put_contents("/tmp/hostapddata", $config);
     system("sudo cp /tmp/hostapddata " . RASPI_HOSTAPD_CONFIG, $result);
     return $result;
