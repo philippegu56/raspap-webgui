@@ -71,9 +71,16 @@
     </div>
     <div class="row">
       <div class="form-group col-md-6">
-        <label for="users_parameters"><?php echo _("Users parameters") ?></label>
-        <input type="text" id="users_parameters" class="form-control" name="users_parameters" placeholder="2007" value="<?php echo $arrConfig["users_parameters"] ?>" aria-describedby="users_parameters_help">
-        <small id="users_parameters_help" class="text-muted"><?php echo _("Configures some users parameters") ?></small>
+        <label for="macaddr_acl"><?php echo _("Macaddr acl") ?></label>
+        <input type="text" id="users_parameters" class="form-control" name="macaddr_acl" placeholder="" value="<?php echo $arrConfig["macaddr_acl"] ?>" aria-describedby="macaddr_acl_help">
+        <small id="macaddr_acl_help" class="text-muted"><?php echo _("Configures macaddr acl") ?></small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="accept_mac_file"><?php echo _("Accept mac file") ?></label>
+        <input type="text" id="accept_mac_file" class="form-control" name="accept_mac_file" placeholder="" value="<?php echo $arrConfig["accept_mac_file"] ?>" aria-describedby="accept_mac_file_help">
+        <small id="accept_mac_file_help" class="text-muted"><?php echo _("Configures accept mac file") ?></small>
       </div>
     </div>
     <div class="row">
