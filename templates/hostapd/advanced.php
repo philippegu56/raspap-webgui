@@ -71,6 +71,13 @@
     </div>
     <div class="row">
       <div class="form-group col-md-6">
+        <label for="users_parameters"><?php echo _("Users parameters") ?></label>
+        <input type="text" id="users_parameters" class="form-control" name="users_parameters" placeholder="2007" value="<?php echo $arrConfig["users_parameters"] ?>" aria-describedby="users_parameters_help">
+        <small id="users_parameters_help" class="text-muted"><?php echo _("Configures some users parameters") ?></small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
       <label for="cbxcountries"><?php echo _("Country Code"); ?></label>
       <input type="hidden" id="selected_country" value="<?php echo htmlspecialchars($arrConfig['country_code'], ENT_QUOTES); ?>">
       <?php SelectorOptions('country_code', $countryCodes, $arrConfig['country_code'], 'cbxcountries', 'loadChannelSelect'); ?>
